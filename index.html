@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Countdown & Study Planner</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Exam Countdown & Study Planner</h1>
+            <p>Plan your study schedule effectively</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <h2>Create New Study Plan</h2>
+                <form id="exam-form">
+                    <div class="form-group">
+                        <label for="exam-name">Exam Name:</label>
+                        <input type="text" id="exam-name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="exam-date">Exam Date:</label>
+                        <input type="date" id="exam-date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="topics">Study Topics (comma separated):</label>
+                        <textarea id="topics" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subtopics">Sub-topics (comma separated):</label>
+                        <textarea id="subtopics" rows="3"></textarea>
+                    </div>
+                    
+                    <div class="time-inputs">
+                        <div class="form-group">
+                            <label for="topic-time">Study Time Per Topic (hours):</label>
+                            <input type="number" id="topic-time" min="1" value="2" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subtopic-time">Study Time Per Sub-topic (hours):</label>
+                            <input type="number" id="subtopic-time" min="1" value="1">
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn">Add Exam</button>
+                </form>
+            </section>
+
+            <section class="output-section">
+                <div class="controls">
+                    <button id="show-plans" class="btn secondary">Show Previous Plans</button>
+                    <div id="countdown"></div>
+                </div>
+                
+                <div id="flowchart-container">
+                    <h3>Your Study Plan Flowchart</h3>
+                    <div id="flowchart"></div>
+                </div>
+                
+                <div id="plans-history" class="hidden">
+                    <h3>Previous Study Plans</h3>
+                    <div id="saved-plans"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
